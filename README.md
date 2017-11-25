@@ -1,3 +1,3 @@
 # fancy-weather
-###react + koa
+### react + koa
 this project is aim to improve my backend skills and have fun
