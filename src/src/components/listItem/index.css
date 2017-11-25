@@ -1,0 +1,16 @@
+.item{
+    line-height: 20px;
+    color: #1A1A1A;
+    padding: 4px;
+    display: flex;
+    justify-content: space-around;
+}
+.desc{
+    width: 200px;
+    text-align: right;
+}
+.value{
+    width: 200px;
+    text-align: left;
+    color: #143B6E;
+}

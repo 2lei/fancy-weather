@@ -1,5 +1,21 @@
 .App {
   text-align: center;
+  /* font-family: "Fira code",
+  "Source Code Pro",
+  Tahoma,
+  Arial,
+  ”Helvetica Neue“,
+  ”Hiragino Sans GB”,
+  Simsun,
+  sans-self; */
+  font-family:
+  "Fira code",
+  "PingFang SC",
+  "Noto Sans CJK",
+  "Source Han Sans",
+  "Microsoft Yahei",
+  source-han-sans-simplified-c,
+  sans-serif;
 }
 
 .App-logo {

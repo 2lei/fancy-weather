@@ -1,19 +1,25 @@
 const Router = require('koa-router')
-const axios = require('axios')
-const { fuck } = require('./config')
-const util = require('util');
+const { api, defaultConfig } = require('./config')
+// const util = require('util')
 
 // 
 const router = new Router()
-const getData = async () => {
-    const res = await axios.get(fuck)
+const getData = async (query) => {
+    if (query.location) {
+        const config = Object.assign(defaultConfig, query)
+    } else {
+        config = defaultConfig
+    }   
+    const res = await api.get('/s6/weather/forecast', {
+        params: config
+    })
     return res
 }
 
 router.get('/weather', async (ctx, next)=> {
-    console.log(ctx)
-    console.log(next)
-    const data = await getData()    
+    console.log(ctx.request)
+    const query = ctx.request.query
+    const data = await getData(query)    
     ctx.response.body = data.data
 })
 

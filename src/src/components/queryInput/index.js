@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import api from '../api/index'
+import api from '../../api/index'
 
 /* eslint-disable */
 class QueryInput extends Component {
@@ -19,12 +19,13 @@ class QueryInput extends Component {
     async handleSubmit() {
         console.log(1)
         const value = this.state.value
-        const url = this.props.value
+        const url = this.props.value.url
         const data = await api.get(url, {
             params: {
-                cityId: 'beijing'
+                location: this.state.value
             }
         })
+        this.props.value.handleResponse(data)
     }
     render() {
         return (
